@@ -1,5 +1,6 @@
 package com.example.huji_winners;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,16 +12,20 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class CreateEvent extends AppCompatActivity {
 
-    static int eventID = 0;
+    int eventID;
     EditText title, time, date, location, maxPract, brief;
     Button addButton;
     ProgressBar progressBar;
@@ -53,9 +58,8 @@ public class CreateEvent extends AppCompatActivity {
             String briefString = brief.getText().toString().trim();
             progressBar.setVisibility(View.VISIBLE);
 
-            eventID++;
             String userID = fAuth.getCurrentUser().getUid();
-            DocumentReference docRef = fStore.collection("events").document(String.valueOf(eventID));
+            DocumentReference docRef = fStore.collection("events").document(userID);
             Map<String, Object> event = new HashMap<>();
             event.put("title", titleString);
             event.put("time", timeString);
