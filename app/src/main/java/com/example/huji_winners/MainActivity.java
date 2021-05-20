@@ -12,18 +12,14 @@ import com.example.huji_winners.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button lgnBtn = findViewById(R.id.lgnButton);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lgnBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLogAct();
-            }
-        });
+        Button lgnBtn = findViewById(R.id.lgnButton);
+        lgnBtn.setOnClickListener(v -> openLogAct());
     }
 
     public void openLogAct() {
