@@ -103,7 +103,7 @@ public class signUpActivity extends AppCompatActivity {
                     user.put("dateBirth", dateString);
                     user.put("diet", dietString);
                     user.put("describe", describeString);
-//                    user.put("sex", genderString);
+                    user.put("sex", genderString);
                     docRef.set(user).addOnSuccessListener(unused -> Log.d("TAG", "onSuccess: user profile created for " + userID));
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 } else {
@@ -113,16 +113,16 @@ public class signUpActivity extends AppCompatActivity {
                 }
             });
         });
-//
-//        radioGrp.setOnCheckedChangeListener((group, checkedId) -> {
-//            switch(checkedId){
-//                case R.id.maleBtn:
-//                    genderString = "Male";
-//                    break;
-//                case R.id.femaleBtn:
-//                    genderString = "Female";
-//                    break;
-//            }
-//        });
+
+        radioGrp.setOnCheckedChangeListener((group, checkedId) -> {
+            switch(checkedId){
+                case R.id.maleBtn:
+                    genderString = "Male";
+                    break;
+                case R.id.femaleBtn:
+                    genderString = "Female";
+                    break;
+            }
+        });
     }
 }
