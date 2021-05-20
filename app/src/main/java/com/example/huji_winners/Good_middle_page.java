@@ -8,14 +8,23 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Good_middle_page extends AppCompatActivity {
+
+	Button logOutBtn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_good_middle_page);
 
+		logOutBtn = findViewById(R.id.logoutBtn);
+		logOutBtn.setOnClickListener(v -> {
+			FirebaseAuth.getInstance().signOut();
+			startActivity(new Intent(getApplicationContext(), MainActivity.class));
+			finish();
+		});
 		Button fab = findViewById(R.id.event_button);
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -32,5 +41,6 @@ public class Good_middle_page extends AppCompatActivity {
 				// todo: to take from the cloud!
 			}
 		});
+
 	}
 }
