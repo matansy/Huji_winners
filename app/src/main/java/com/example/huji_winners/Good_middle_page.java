@@ -26,20 +26,14 @@ public class Good_middle_page extends AppCompatActivity {
 			finish();
 		});
 		Button fab = findViewById(R.id.event_button);
-		fab.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startActivity(new Intent(getApplicationContext(), eventChoice.class)); // todo: to Idan's page
-				// todo: to take from the cloud!
-			}
+		fab.setOnClickListener(view -> {
+			startActivity(new Intent(getApplicationContext(), eventChoice.class)); // todo: to Idan's page
+			// todo: to take from the cloud!
 		});
 		Button fab1 = findViewById(R.id.new_event_button);
-		fab1.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startActivity(new Intent(getApplicationContext(), CreateEvent.class)); // todo: to Idan's page
-				// todo: to take from the cloud!
-			}
+		fab1.setOnClickListener(view -> {
+			startActivity(new Intent(getApplicationContext(), CreateEvent.class)); // todo: to Idan's page
+			// todo: to take from the cloud!
 		});
 
 	}

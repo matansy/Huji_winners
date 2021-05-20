@@ -1,5 +1,6 @@
 package com.example.huji_winners;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,13 +9,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class eventChoice extends AppCompatActivity {
 
-	ArrayList<Event> events;
+	FirebaseAuth fAuth;
+	FirebaseFirestore fStore;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,23 +36,24 @@ public class eventChoice extends AppCompatActivity {
 		// Lookup the recyclerview in activity layout
 		RecyclerView rvContacts = (RecyclerView) findViewById(R.id.my_list);
 
-		// Initialize contacts
-		events = Event.createEventsList();
-		// Create adapter passing in the sample user data
-		EventAdapter adapter = new EventAdapter(events);
-		// Attach the adapter to the recyclerview to populate items
-		rvContacts.setAdapter(adapter);
-		// Set layout manager to position the items
-		rvContacts.setLayoutManager(new LinearLayoutManager(this));
-		// That's all!
+		fAuth = FirebaseAuth.getInstance();
+		fStore = FirebaseFirestore.getInstance();
+		ArrayList<Event> events = new ArrayList<Event>();
 
-//		FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-//		fab.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View view) {
-//				startActivity(new Intent(getApplicationContext(), eventChoice.class)); // to Idan's page
-//				// to take from the cloud!
-//			}
-//		});
+		fStore.collection("events").get().addOnCompleteListener(task -> {
+			if (task.isSuccessful()) {
+				for (QueryDocumentSnapshot document : task.getResult()) {
+					Event e = new Event(document.getData(), document.getId());
+					events.add(e);
+					System.out.println(e);
+					System.out.println(e.getName());
+				}
+				EventAdapter adapter = new EventAdapter(events);
+				// Attach the adapter to the recyclerview to populate items
+				rvContacts.setAdapter(adapter);
+				// Set layout manager to position the items
+				rvContacts.setLayoutManager(new LinearLayoutManager(this));
+			}
+		});
 	}
 }
