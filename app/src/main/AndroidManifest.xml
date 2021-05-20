@@ -11,13 +11,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Huji_winners">
-        <activity android:name=".createEvent"></activity>
+        <activity android:name=".Good_middle_page"></activity>
+        <activity android:name=".CreateEvent" />
         <activity android:name=".eventChoice" />
-        <activity
-                android:name=".eventSelect"
-                android:label="@string/title_activity_event_select"
-                android:theme="@style/Theme.Huji_winners.NoActionBar" />
-        <activity android:name=".loginActivity"></activity>
+
+        <activity android:name=".loginActivity" />
         <activity android:name=".signUpActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

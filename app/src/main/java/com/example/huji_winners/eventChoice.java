@@ -35,13 +35,13 @@ public class eventChoice extends AppCompatActivity {
 		rvContacts.setLayoutManager(new LinearLayoutManager(this));
 		// That's all!
 
-		FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-		fab.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				startActivity(new Intent(getApplicationContext(), eventChoice.class)); // to Idan's page
-				// to take from the cloud!
-			}
-		});
+//		FloatingActionButton fab = findViewById(R.id.floatingActionButton);
+//		fab.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View view) {
+//				startActivity(new Intent(getApplicationContext(), eventChoice.class)); // to Idan's page
+//				// to take from the cloud!
+//			}
+//		});
 	}
 }
