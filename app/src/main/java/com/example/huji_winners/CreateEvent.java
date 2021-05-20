@@ -42,7 +42,7 @@ public class CreateEvent extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         addButton = findViewById(R.id.SubmitButton);
         fStore = FirebaseFirestore.getInstance();
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar2);
 
         addButton.setOnClickListener(v -> {
             String titleString = title.getText().toString().trim();
@@ -56,16 +56,16 @@ public class CreateEvent extends AppCompatActivity {
             eventID++;
             String userID = fAuth.getCurrentUser().getUid();
             DocumentReference docRef = fStore.collection("events").document(String.valueOf(eventID));
-            Map<String, Object> user = new HashMap<>();
-            user.put("title", titleString);
-            user.put("time", timeString);
-            user.put("date", dateString);
-            user.put("location", locationString);
-            user.put("maxPract", maxPractString);
-            user.put("brief", briefString);
+            Map<String, Object> event = new HashMap<>();
+            event.put("title", titleString);
+            event.put("time", timeString);
+            event.put("date", dateString);
+            event.put("location", locationString);
+            event.put("maxPract", maxPractString);
+            event.put("brief", briefString);
             Toast.makeText(CreateEvent.this, "Event Added.", Toast.LENGTH_SHORT).show();
-            docRef.set(user).addOnSuccessListener(unused -> Log.d("TAG", "onSuccess: user profile created for " + userID));
-            startActivity(new Intent(getApplicationContext(), eventChoice.class));
+            docRef.set(event).addOnSuccessListener(unused -> Log.d("TAG", "onSuccess: user profile created for " + userID));
+            startActivity(new Intent(getApplicationContext(), Good_middle_page.class));
         });
     }
 }
