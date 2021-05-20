@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "356599371362",
+    "project_id": "hujihackathon30",
+    "storage_bucket": "hujihackathon30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356599371362:android:bc0395fb7ce37276e3233b",
+        "android_client_info": {
+          "package_name": "com.example.huji_winners"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356599371362-7l6l232mkuhhsqftpr7rd99ccsqi8u5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClcJJu_2h_QlrVtRY7PHGpAVN2JiF6T7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356599371362-7l6l232mkuhhsqftpr7rd99ccsqi8u5t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
