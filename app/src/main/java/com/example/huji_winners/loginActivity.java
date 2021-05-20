@@ -65,7 +65,7 @@ public class loginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
                         Toast.makeText(loginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), eventChoice.class));
+                        startActivity(new Intent(getApplicationContext(), Good_middle_page.class));
                         // change to desired page
                     } else {
                         Toast.makeText(loginActivity.this, "Login failed. "
