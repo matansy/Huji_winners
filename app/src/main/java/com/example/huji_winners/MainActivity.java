@@ -13,12 +13,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button lgnBtn = findViewById(R.id.lgnButton);
-        lgnBtn.setOnClickListener(v -> openLogAct());
+        Button signUpBtn = findViewById(R.id.signUpButton);
+        Button loginBtn = findViewById(R.id.loginButton);
+        signUpBtn.setOnClickListener(v -> openSignUpAct());
+        loginBtn.setOnClickListener(v -> openLoginAct());
     }
 
-    public void openLogAct() {
+    public void openSignUpAct() {
         Intent intent = new Intent(this, signUpActivity.class);
+        startActivity(intent);
+    }
+    public void openLoginAct() {
+        Intent intent = new Intent(this, loginActivity.class);
         startActivity(intent);
     }
 }
