@@ -10,25 +10,28 @@
         android:id="@+id/EventTitle"
         android:layout_width="379dp"
         android:layout_height="93dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="3dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="Please enter event deatails"
+        android:text="Please enter event details"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toTopOf="@+id/GetEventName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29000002" />
 
     <EditText
         android:id="@+id/GetEventName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="6dp"
         android:ems="10"
-        android:hint="Event name"
+        android:hint="Title"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/GetEventTime"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,43 +41,29 @@
 
     <EditText
         android:id="@+id/GetEventLocation"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="Event city"
+        android:hint="Location"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/GetEventDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/GetEventDate" />
 
     <EditText
-        android:id="@+id/GetEventDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Event details"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/SubmitButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GetEventLocation" />
-
-    <EditText
         android:id="@+id/GetEventTime"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="6dp"
         android:ems="10"
-        android:hint="Event time"
+        android:hint="Starting Time"
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/GetEventDate"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,13 +72,29 @@
         app:layout_constraintTop_toBottomOf="@+id/GetEventName" />
 
     <EditText
-        android:id="@+id/GetEventDate"
-        android:layout_width="wrap_content"
+        android:id="@+id/GetMaxMembers"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Max Participants"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GetEventLocation" />
+
+    <EditText
+        android:id="@+id/GetEventDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="6dp"
         android:ems="10"
-        android:hint="Event date"
+        android:hint="Date DD.MM.YYYY"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/GetEventLocation"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,15 +104,41 @@
 
     <Button
         android:id="@+id/SubmitButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:layout_marginBottom="175dp"
-        android:text="Button"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="100dp"
+        android:text="Add Event"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GetEventDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/SubmitButton" />
+
+    <EditText
+        android:id="@+id/GetBrief"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Brief"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GetMaxMembers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

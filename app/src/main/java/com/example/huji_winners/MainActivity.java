@@ -22,18 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button signUpBtn = findViewById(R.id.signUpButton);
         Button loginBtn = findViewById(R.id.loginButton);
-        Button logoutBtn = findViewById(R.id.logutButton);
         fAuth = FirebaseAuth.getInstance();
 
         if (fAuth.getCurrentUser() != null) {
-            signUpBtn.setVisibility(View.INVISIBLE);
-            loginBtn.setVisibility(View.INVISIBLE);
-            logoutBtn.setVisibility(View.VISIBLE);
-        } else {
-            signUpBtn.setVisibility(View.VISIBLE);
-            loginBtn.setVisibility(View.VISIBLE);
-            logoutBtn.setVisibility(View.INVISIBLE);
+            startActivity(new Intent(getApplicationContext(), Good_middle_page.class));
         }
+
 
 
         signUpBtn.setOnClickListener(v -> openSignUpAct());
@@ -47,10 +41,5 @@ public class MainActivity extends AppCompatActivity {
     public void openLoginAct() {
         Intent intent = new Intent(this, loginActivity.class);
         startActivity(intent);
-    }
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        finish();
     }
 }

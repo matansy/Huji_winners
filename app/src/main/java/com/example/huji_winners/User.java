@@ -5,7 +5,7 @@ import java.util.List;
 
 public class User {
 
-    private final String name;
+    private String name, email;
 
     private List<Event> createdEvents;
 
@@ -17,11 +17,12 @@ public class User {
 
     private final String preferences;
 
-    public User(String name, String[] birthDate, String hobbies, String preferences){
+    public User(String name, String[] birthDate, String hobbies, String preferences, String email){
         this.name = name;
         this.hobbies = hobbies;
         this.birthDate = birthDate;
         this.preferences = preferences;
+        this.email = email;
     }
 
     public void setBirthDate(String[] newDate){

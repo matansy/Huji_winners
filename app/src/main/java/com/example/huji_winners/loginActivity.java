@@ -17,7 +17,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -63,10 +62,10 @@ public class loginActivity extends AppCompatActivity {
 
             fAuth.signInWithEmailAndPassword(emailString, passwordString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
-                public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+                public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
                         Toast.makeText(loginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Good_middle_page.class));
                         // change to desired page
                     } else {
                         Toast.makeText(loginActivity.this, "Login failed. "
