@@ -58,6 +58,11 @@ public class EventPage extends AppCompatActivity {
                 break;
             }
         }
+        if (e.getHost().equals(fAuth.getCurrentUser().getUid())) {
+            joinBtn.setVisibility(View.INVISIBLE);
+            attend.setVisibility(View.VISIBLE);
+            attend.setText("You are the host of this event!");
+        }
 
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
