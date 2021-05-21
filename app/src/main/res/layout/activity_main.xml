@@ -6,12 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/my_list"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
 
-   </androidx.recyclerview.widget.RecyclerView>
 
     <Button
         android:id="@+id/signUpButton"
@@ -39,6 +34,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signUpButton" />
 
+    <TextView
+            android:text="Come Join \n\n    Us To"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColor="@color/purple_500"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:layout_width="229dp"
+            android:layout_height="155dp"
+            android:id="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="91dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="91dp" />
+
+    <TextView
+            android:text="Meet N Eat"
+            android:textColor="@color/purple_500"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="60sp"
+            android:textStyle="bold"
+
+            android:layout_width="319dp"
+            android:layout_height="84dp"
+            android:id="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="37dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="39dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+            android:layout_width="184dp"
+            android:layout_height="97dp"
+            app:srcCompat="@drawable/start"
+            android:id="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="43dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
