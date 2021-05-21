@@ -8,10 +8,12 @@
 
 
 
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/my_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/picnic"
             tools:layout_editor_absoluteY="128dp"
             tools:layout_editor_absoluteX="-16dp"></androidx.recyclerview.widget.RecyclerView>
 

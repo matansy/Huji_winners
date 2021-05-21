@@ -64,7 +64,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
 
 		// Set item views based on your views and data model
 		Button button = holder.nameTextView;
-		button.setText(event.getName() + " " + event.getDate() + " " + event.getTime());
+		button.setText(event.getName() + " | " + event.getDate() + " | " + event.getTime());
 //		button.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), eventChoice.class)));
 
 //		button.setText();
