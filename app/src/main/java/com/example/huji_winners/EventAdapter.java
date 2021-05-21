@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import static androidx.core.content.ContextCompat.startActivity;
@@ -35,14 +37,17 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
 		}
 	}
 	// Store a member variable for the contacts
-	private List<Event> mEvents;
+	private final List<Event> mEvents;
+	private final Context cont;
 
 	// Pass in the contact array into the constructor
-	public EventAdapter(List<Event> contacts) {
+	public EventAdapter(Context context, List<Event> contacts) {
 		mEvents = contacts;
+		cont = context;
 	}
 
 	// Usually involves inflating a layout from XML and returning the holder
+	@NotNull
 	@Override
 	public EventAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		Context context = parent.getContext();
@@ -65,11 +70,12 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
 		// Set item views based on your views and data model
 		Button button = holder.nameTextView;
 		button.setText(event.getName() + " | " + event.getDate() + " | " + event.getTime());
-//		button.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), eventChoice.class)));
-
-//		button.setText();
-//		button.setEnabled(contact.isOnline());
+		button.setOnClickListener(v -> {
+			Intent i = new Intent(this.cont, EventPage.class);
+			i.putExtra("event", event);
+			this.cont.startActivity(i); });
 	}
+
 
 	// Returns the total count of items in the list
 	@Override
