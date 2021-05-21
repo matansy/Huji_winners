@@ -62,7 +62,7 @@ public class EventPage extends AppCompatActivity {
             joinBtn.setVisibility(View.INVISIBLE);
             attend.setVisibility(View.VISIBLE);
             attend.setText("You are the host of this event!");
-        }
+        } // fixed
 
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
