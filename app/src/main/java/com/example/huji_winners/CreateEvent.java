@@ -20,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,6 +68,7 @@ public class CreateEvent extends AppCompatActivity {
             event.put("location", locationString);
             event.put("maxPract", maxPractString);
             event.put("brief", briefString);
+            event.put("members", userID);
             Toast.makeText(CreateEvent.this, "Event Added.", Toast.LENGTH_SHORT).show();
             docRef.set(event).addOnSuccessListener(unused -> Log.d("TAG", "onSuccess: user profile created for " + userID));
             startActivity(new Intent(getApplicationContext(), Good_middle_page.class));

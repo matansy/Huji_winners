@@ -1,7 +1,5 @@
 package com.example.huji_winners;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -16,8 +14,6 @@ public class Event {
 	String maxPract;
 
 	private final String host;
-
-	private List<User> attended;
 
 	private String description;
 
@@ -39,14 +35,6 @@ public class Event {
 		this.place = (String) event.get("location");
 		this.date = (String) event.get("date");
 		this.maxPract = (String) event.get("maxPract");
-	}
-
-	public void addAttendant(User newAtt){
-		this.attended.add(newAtt);
-	}
-
-	public List<User> getAttendants(){
-		return this.attended;
 	}
 
 	public String getTime(){
