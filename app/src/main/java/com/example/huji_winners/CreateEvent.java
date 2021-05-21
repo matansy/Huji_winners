@@ -68,7 +68,7 @@ public class CreateEvent extends AppCompatActivity {
             event.put("location", locationString);
             event.put("maxPract", maxPractString);
             event.put("brief", briefString);
-            event.put("members", userID.concat(","));
+            event.put("members", "");
             Toast.makeText(CreateEvent.this, "Event Added.", Toast.LENGTH_SHORT).show();
             docRef.set(event).addOnSuccessListener(unused -> Log.d("TAG", "onSuccess: user profile created for " + userID));
             startActivity(new Intent(getApplicationContext(), Good_middle_page.class));

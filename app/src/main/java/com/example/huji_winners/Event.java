@@ -38,7 +38,11 @@ public class Event implements Serializable {
 		this.date = (String) event.get("date");
 		this.maxPract = (String) event.get("maxPract");
 		this.members = (String) event.get("members");
-		this.membersList = this.members.split(",");
+		if (this.members.equals("")) {
+			this.membersList = new String[0];
+		} else {
+			this.membersList = this.members.split(",");
+		}
 	}
 
 	public String getTime(){
