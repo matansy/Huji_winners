@@ -48,7 +48,7 @@ public class eventChoice extends AppCompatActivity {
 					System.out.println(e);
 					System.out.println(e.getName());
 				}
-				EventAdapter adapter = new EventAdapter(events);
+				EventAdapter adapter = new EventAdapter(eventChoice.this, events);
 				// Attach the adapter to the recyclerview to populate items
 				rvContacts.setAdapter(adapter);
 				// Set layout manager to position the items

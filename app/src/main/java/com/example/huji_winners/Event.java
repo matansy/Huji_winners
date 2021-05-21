@@ -1,9 +1,14 @@
 package com.example.huji_winners;
 
+import android.os.health.SystemHealthManager;
+
+import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
-public class Event {
+public class Event implements Serializable {
 
 	private String eventName;
 
@@ -16,6 +21,8 @@ public class Event {
 	private final String host;
 
 	private String description;
+
+	private String members[];
 
 	public Event(String eventName, String date, String time, String host, String description, String place){
 		this.eventName = eventName;
@@ -35,6 +42,9 @@ public class Event {
 		this.place = (String) event.get("location");
 		this.date = (String) event.get("date");
 		this.maxPract = (String) event.get("maxPract");
+		String memb = (String) event.get("members");
+		System.out.println(memb);
+		this.members = memb.split(",");
 	}
 
 	public String getTime(){
@@ -49,12 +59,20 @@ public class Event {
 		return this.eventName;
 	}
 
+	public String getLocation(){
+		return this.place;
+	}
+
 	public String getHost(){
 		return this.host;
 	}
 
 	public String getDescription(){
 		return this.description;
+	}
+
+	public String[] getMembers(){
+		return this.members;
 	}
 
 //	public static ArrayList<Event> createEventsList(){

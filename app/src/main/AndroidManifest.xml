@@ -15,7 +15,7 @@
         <activity android:name=".Good_middle_page"></activity>
         <activity android:name=".CreateEvent" />
         <activity android:name=".eventChoice" />
-
+        <activity android:name=".EventPage" />
         <activity android:name=".loginActivity" />
         <activity android:name=".signUpActivity" />
         <activity android:name=".MainActivity">
